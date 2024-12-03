@@ -1,24 +1,24 @@
 import pygame
 import random
 
-# Inisialisasi pygame
+# Menginisialisasi pygame
 pygame.init()
 
-# Kelas Game
+# Kelas Game Shot the Meteir
 class GameTembakMeteor:
     def __init__(self):
-        # Dimensi layar
+        # Dimensi layar permainan
         self.lebar_layar = 800
         self.tinggi_layar = 600
         self.layar = pygame.display.set_mode((self.lebar_layar, self.tinggi_layar))
         pygame.display.set_caption("Game Tembak Meteor")
         
-        # Warna
+        # Penggunaan warna pada permainan
         self.warna_latar = (0, 0, 30)  # Biru gelap
         self.warna_peluru = (255, 255, 0)  # Putih
         self.warna_meteor = (200, 0, 0)  # Kuning
         
-        # Pemain
+        # Bentuk pemain
         self.pemain = pygame.Rect(self.lebar_layar // 2 - 25, self.tinggi_layar - 50, 50, 10)  # Posisi pemain
         self.kecepatan_pemain = 15
         
@@ -67,7 +67,7 @@ class GameTembakMeteor:
                 elif keys[pygame.K_q]:  # Keluar dari permainan
                     self.berjalan = False
             else:
-                # Kontrol pemain
+                # Kontrol untuk pemain
                 tombol = pygame.key.get_pressed()
                 if tombol[pygame.K_LEFT] and self.pemain.left > 0:
                     self.pemain.x -= self.kecepatan_pemain
